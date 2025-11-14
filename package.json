@@ -18,5 +18,5 @@
     "node": ">=20.0.0"
   },
   "author": "Forward Email",
-  "license": "BUSL-1.1"
+  "license": "MIT"
 }

@@ -1,0 +1,107 @@
+name: Daily SQLite Benchmarks
+
+on:
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual triggering
+  push:
+    branches:
+      - main
+    paths:
+      - 'benchmark.js'
+      - '.github/workflows/daily-benchmarks.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    name: Run Benchmarks on Node ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22, 24, 'latest']
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential python3 python3-dev
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run benchmarks
+        run: npm run benchmark
+        continue-on-error: true
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-node-${{ matrix.node-version }}
+          path: benchmark_results_node_*.json
+          if-no-files-found: warn
+
+  consolidate:
+    name: Consolidate Results and Update README
+    needs: benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Download all benchmark results
+        uses: actions/download-artifact@v4
+        with:
+          path: benchmark-artifacts
+
+      - name: Consolidate benchmark results
+        run: |
+          # Move all JSON files to root directory
+          find benchmark-artifacts -name "*.json" -exec cp {} . \;
+
+          # List all result files
+          ls -la benchmark_results_*.json || echo "No benchmark result files found"
+
+      - name: Install dependencies for update script
+        run: npm install
+
+      - name: Generate updated README
+        run: node scripts/update-readme.js
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit and push changes
+        run: |
+          git add benchmark_results_*.json README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update benchmark results [skip ci]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
