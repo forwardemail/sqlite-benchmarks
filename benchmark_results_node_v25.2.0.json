@@ -1,0 +1,107 @@
+{
+  "timestamp": "2025-11-14T17:56:49.979Z",
+  "node_version": "v25.2.0",
+  "platform": "linux",
+  "arch": "x64",
+  "results": {
+    "Forward Email Production": {
+      "configName": "Forward Email Production",
+      "setup_time": 113.110217,
+      "insert_ops_per_sec": 9032,
+      "select_ops_per_sec": 15189,
+      "update_ops_per_sec": 17763,
+      "delete_ops_per_sec": 53723,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "Memory Temp Storage": {
+      "configName": "Memory Temp Storage",
+      "setup_time": 99.689018,
+      "insert_ops_per_sec": 8322,
+      "select_ops_per_sec": 15507,
+      "update_ops_per_sec": 18095,
+      "delete_ops_per_sec": 81880,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "Synchronous OFF (Unsafe)": {
+      "configName": "Synchronous OFF (Unsafe)",
+      "setup_time": 98.252107,
+      "insert_ops_per_sec": 10441,
+      "select_ops_per_sec": 15529,
+      "update_ops_per_sec": 18209,
+      "delete_ops_per_sec": 42366,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "Synchronous EXTRA (Safe)": {
+      "configName": "Synchronous EXTRA (Safe)",
+      "setup_time": 101.669866,
+      "insert_ops_per_sec": 2725,
+      "select_ops_per_sec": 15114,
+      "update_ops_per_sec": 3346,
+      "delete_ops_per_sec": 74766,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "No Auto Vacuum": {
+      "configName": "No Auto Vacuum",
+      "setup_time": 99.289883,
+      "insert_ops_per_sec": 9757,
+      "select_ops_per_sec": 14620,
+      "update_ops_per_sec": 17738,
+      "delete_ops_per_sec": 78162,
+      "vacuum_time": 56.310408,
+      "db_size_mb": "4.12",
+      "wal_size_mb": "7.41"
+    },
+    "Incremental Vacuum": {
+      "configName": "Incremental Vacuum",
+      "setup_time": 100.599252,
+      "insert_ops_per_sec": 9695,
+      "select_ops_per_sec": 13826,
+      "update_ops_per_sec": 17858,
+      "delete_ops_per_sec": 86573,
+      "vacuum_time": 54.555942,
+      "db_size_mb": "4.13",
+      "wal_size_mb": "7.41"
+    },
+    "WAL Autocheckpoint 1000": {
+      "configName": "WAL Autocheckpoint 1000",
+      "setup_time": 99.731717,
+      "insert_ops_per_sec": 9608,
+      "select_ops_per_sec": 14918,
+      "update_ops_per_sec": 18115,
+      "delete_ops_per_sec": 83598,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "Cache Size 64MB": {
+      "configName": "Cache Size 64MB",
+      "setup_time": 97.795046,
+      "insert_ops_per_sec": 9848,
+      "select_ops_per_sec": 15344,
+      "update_ops_per_sec": 18032,
+      "delete_ops_per_sec": 87176,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    },
+    "MMAP 256MB": {
+      "configName": "MMAP 256MB",
+      "setup_time": 98.583182,
+      "insert_ops_per_sec": 9620,
+      "select_ops_per_sec": 15633,
+      "update_ops_per_sec": 18122,
+      "delete_ops_per_sec": 82420,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04"
+    }
+  }
+}
