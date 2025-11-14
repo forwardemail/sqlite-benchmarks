@@ -1,0 +1,22 @@
+{
+  "name": "sqlite-pragma-benchmarks",
+  "version": "1.0.0",
+  "description": "SQLite PRAGMA performance benchmarks for Forward Email blog post",
+  "main": "index.js",
+  "scripts": {
+    "test": "node benchmark.js",
+    "benchmark": "node benchmark.js",
+    "benchmark:all": "node run-all-versions.js"
+  },
+  "dependencies": {
+    "better-sqlite3-multiple-ciphers": "^11.3.0",
+    "benchmark": "^2.1.4",
+    "cli-table3": "^0.6.3",
+    "fs-extra": "^11.1.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "Forward Email",
+  "license": "BUSL-1.1"
+}
