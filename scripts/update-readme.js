@@ -97,9 +97,12 @@ function generateBenchmarkSection(results) {
   let section = `### Latest Automated Benchmark Results\n\n`;
   section += `**Last Updated:** ${new Date().toISOString().split('T')[0]}\n\n`;
 
-  // Get all configuration names from the first result
-  const firstResult = results[versions[0]];
-  const configs = Object.keys(firstResult.results);
+  // Get all configuration names from ALL results (union of all configs)
+  const configsSet = new Set();
+  for (const version of versions) {
+    Object.keys(results[version].results).forEach(config => configsSet.add(config));
+  }
+  const configs = Array.from(configsSet).sort();
 
   // Create a table for each configuration
   for (const config of configs) {
@@ -114,6 +117,9 @@ function generateBenchmarkSection(results) {
         section += `| ${version} | ${library} | ${result.setup_time.toFixed(1)} | ${result.insert_ops_per_sec.toLocaleString()} | ${result.select_ops_per_sec.toLocaleString()} | ${result.update_ops_per_sec.toLocaleString()} | ${result.delete_ops_per_sec.toLocaleString()} | ${result.db_size_mb} |\n`;
       } else if (result && result.error) {
         section += `| ${version} | - | ERROR | - | - | - | - | - |\n`;
+      } else {
+        // Config doesn't exist for this version - show N/A
+        section += `| ${version} | - | - | - | - | - | - | - |\n`;
       }
     }
 
