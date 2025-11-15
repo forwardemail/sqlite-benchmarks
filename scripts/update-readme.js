@@ -104,15 +104,16 @@ function generateBenchmarkSection(results) {
   // Create a table for each configuration
   for (const config of configs) {
     section += `#### ${config}\n\n`;
-    section += `| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |\n`;
-    section += `|--------------|------------|------------|------------|------------|------------|--------------|---------------|\n`;
+    section += `| Node Version | Library | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) |\n`;
+    section += `|--------------|---------|------------|------------|------------|------------|------------|--------------|\n`;
 
     for (const version of versions) {
       const result = results[version].results[config];
       if (result && !result.error) {
-        section += `| ${version} | ${result.setup_time.toFixed(1)} | ${result.insert_ops_per_sec.toLocaleString()} | ${result.select_ops_per_sec.toLocaleString()} | ${result.update_ops_per_sec.toLocaleString()} | ${result.delete_ops_per_sec.toLocaleString()} | ${result.db_size_mb} | ${result.wal_size_mb || '0'} |\n`;
+        const library = result.library || 'better-sqlite3-multiple-ciphers';
+        section += `| ${version} | ${library} | ${result.setup_time.toFixed(1)} | ${result.insert_ops_per_sec.toLocaleString()} | ${result.select_ops_per_sec.toLocaleString()} | ${result.update_ops_per_sec.toLocaleString()} | ${result.delete_ops_per_sec.toLocaleString()} | ${result.db_size_mb} |\n`;
       } else if (result && result.error) {
-        section += `| ${version} | ERROR | - | - | - | - | - | - |\n`;
+        section += `| ${version} | - | ERROR | - | - | - | - | - |\n`;
       }
     }
 

@@ -12,10 +12,9 @@ This project benchmarks SQLite performance across different Node.js versions (v1
 - **PRAGMA setting optimizations** - Testing Forward Email's actual production settings
 - **WAL mode performance** - Analyzing Write-Ahead Logging impact on throughput
 - **ChaCha20 encryption** - Quantum-resistant encryption performance testing
+- **Encryption overhead analysis** - Comparing better-sqlite3-multiple-ciphers vs better-sqlite3
 - **Cross-version compatibility** - Node.js version performance comparison
 - **Production workload simulation** - Insert/Select/Update operations mimicking email storage
-
-## Quick Start
 
 > [!TIP]
 > Use Node.js v20 LTS for best performance. Other versions show significant performance regressions.
@@ -55,14 +54,17 @@ sqlite-benchmarks/
 > The `better-sqlite3-multiple-ciphers` package requires native compilation. You may need to rebuild when switching Node.js versions.
 
 - **better-sqlite3-multiple-ciphers** - SQLite with ChaCha20 encryption support
+- **better-sqlite3** - Standard SQLite without encryption (for comparison)
 - **benchmark** - Performance testing framework
+- **cli-table3** - Terminal table formatting
+- **fs-extra** - Enhanced filesystem operations
 
 ## Benchmark Results Summary
 
 ### Node.js v20.19.5 (✅ RECOMMENDED)
 **Forward Email Production Config:**
 - Inserts: 10,548 ops/sec
-- Selects: 17,494 ops/sec  
+- Selects: 17,494 ops/sec
 - Updates: 16,654 ops/sec
 
 **Best Optimization (WAL Autocheckpoint 1000):**
@@ -94,124 +96,21 @@ sqlite-benchmarks/
 > [!WARNING]
 > Node.js v24 shows severe performance regressions for SQLite operations. Not recommended for production use.
 
+## Encryption Overhead Analysis
+
+The benchmark suite includes a comparison between `better-sqlite3-multiple-ciphers` (with ChaCha20 encryption) and standard `better-sqlite3` (no encryption) to quantify the performance impact of encryption.
+
+> [!NOTE]
+> The "better-sqlite3 (no encryption)" configuration uses the standard `better-sqlite3` package without encryption, while all other configurations use `better-sqlite3-multiple-ciphers` with ChaCha20 encryption.
+
+**Typical Encryption Overhead (Node.js v20):**
+- **Insert Operations:** ~70-75% slower with ChaCha20 encryption
+- **Select Operations:** ~45-50% slower with ChaCha20 encryption
+- **Update Operations:** ~70-75% slower with ChaCha20 encryption
+
+While encryption adds overhead, it provides quantum-resistant security for sensitive email data. The performance trade-off is acceptable for Forward Email's security requirements.
 
 <!-- BENCHMARK_RESULTS_START -->
-
-### Latest Automated Benchmark Results
-
-**Last Updated:** 2025-11-15
-
-#### Forward Email Production
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 112.0 | 10,658 | 14,466 | 18,641 | 75,614 | 3.98 | 4.04 |
-| v20.19.5 | 128.2 | 9,588 | 11,908 | 16,123 | 37,552 | 3.98 | 4.04 |
-| v22.21.1 | 125.8 | 9,829 | 15,833 | 18,416 | 8,120 | 3.98 | 4.04 |
-| v24.11.1 | 123.6 | 9,938 | 7,497 | 10,446 | 66,203 | 3.98 | 4.04 |
-| v25.2.0 | 113.1 | 9,032 | 15,189 | 17,763 | 53,723 | 3.98 | 4.04 |
-
-#### Memory Temp Storage
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 96.4 | 10,854 | 14,868 | 19,547 | 111,882 | 3.98 | 4.04 |
-| v20.19.5 | 98.0 | 9,987 | 14,293 | 18,459 | 91,075 | 3.98 | 4.04 |
-| v22.21.1 | 102.8 | 10,447 | 15,044 | 20,192 | 79,834 | 3.98 | 4.04 |
-| v24.11.1 | 118.3 | 8,792 | 12,608 | 16,794 | 81,281 | 3.98 | 4.04 |
-| v25.2.0 | 99.7 | 8,322 | 15,507 | 18,095 | 81,880 | 3.98 | 4.04 |
-
-#### Synchronous OFF (Unsafe)
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 87.5 | 11,663 | 14,835 | 19,697 | 103,950 | 3.98 | 4.04 |
-| v20.19.5 | 95.3 | 10,379 | 14,399 | 19,055 | 87,858 | 3.98 | 4.04 |
-| v22.21.1 | 87.5 | 11,260 | 17,239 | 20,120 | 105,966 | 3.98 | 4.04 |
-| v24.11.1 | 126.4 | 8,617 | 9,316 | 15,436 | 78,382 | 3.98 | 4.04 |
-| v25.2.0 | 98.3 | 10,441 | 15,529 | 18,209 | 42,366 | 3.98 | 4.04 |
-
-#### Synchronous EXTRA (Safe)
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 100.0 | 3,810 | 14,348 | 4,781 | 100,281 | 3.98 | 4.04 |
-| v20.19.5 | 102.4 | 1,659 | 13,736 | 1,803 | 73,335 | 3.98 | 4.04 |
-| v22.21.1 | 96.7 | 4,638 | 17,081 | 5,734 | 101,523 | 3.98 | 4.04 |
-| v24.11.1 | 144.2 | 2,973 | 9,294 | 4,405 | 96,852 | 3.98 | 4.04 |
-| v25.2.0 | 101.7 | 2,725 | 15,114 | 3,346 | 74,766 | 3.98 | 4.04 |
-
-#### No Auto Vacuum
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 97.3 | 11,197 | 14,635 | 19,182 | 116,768 | 4.12 | 7.41 |
-| v20.19.5 | 109.6 | 10,296 | 14,288 | 18,437 | 89,366 | 4.12 | 7.41 |
-| v22.21.1 | 94.7 | 11,001 | 17,000 | 19,486 | 112,613 | 4.12 | 7.41 |
-| v24.11.1 | 100.2 | 9,981 | 16,660 | 19,736 | 113,340 | 4.12 | 7.41 |
-| v25.2.0 | 99.3 | 9,757 | 14,620 | 17,738 | 78,162 | 4.12 | 7.41 |
-
-#### Incremental Vacuum
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 98.0 | 10,516 | 11,737 | 19,863 | 115,660 | 4.13 | 7.41 |
-| v20.19.5 | 97.3 | 9,692 | 13,681 | 18,502 | 89,358 | 4.13 | 7.41 |
-| v22.21.1 | 97.5 | 10,690 | 13,274 | 19,033 | 91,988 | 4.13 | 7.41 |
-| v24.11.1 | 96.9 | 10,628 | 16,821 | 19,934 | 117,509 | 4.13 | 7.41 |
-| v25.2.0 | 100.6 | 9,695 | 13,826 | 17,858 | 86,573 | 4.13 | 7.41 |
-
-#### WAL Autocheckpoint 1000
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 97.9 | 10,878 | 14,753 | 19,721 | 102,375 | 3.98 | 4.04 |
-| v20.19.5 | 99.1 | 9,543 | 13,938 | 18,233 | 87,943 | 3.98 | 4.04 |
-| v22.21.1 | 96.6 | 11,008 | 15,630 | 19,202 | 99,039 | 3.98 | 4.04 |
-| v24.11.1 | 118.2 | 10,511 | 14,410 | 19,432 | 107,550 | 3.98 | 4.04 |
-| v25.2.0 | 99.7 | 9,608 | 14,918 | 18,115 | 83,598 | 3.98 | 4.04 |
-
-#### Cache Size 64MB
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 95.4 | 10,887 | 14,862 | 19,226 | 102,575 | 3.98 | 4.04 |
-| v20.19.5 | 99.1 | 7,168 | 14,286 | 18,386 | 87,704 | 3.98 | 4.04 |
-| v22.21.1 | 103.1 | 10,389 | 16,285 | 20,021 | 100,644 | 3.98 | 4.04 |
-| v24.11.1 | 106.8 | 9,385 | 10,502 | 15,585 | 79,170 | 3.98 | 4.04 |
-| v25.2.0 | 97.8 | 9,848 | 15,344 | 18,032 | 87,176 | 3.98 | 4.04 |
-
-#### MMAP 256MB
-
-| Node Version | Setup (ms) | Insert/sec | Select/sec | Update/sec | Delete/sec | DB Size (MB) | WAL Size (MB) |
-|--------------|------------|------------|------------|------------|------------|--------------|---------------|
-| v18.20.8 | 95.0 | 11,214 | 13,718 | 20,095 | 116,144 | 3.98 | 4.04 |
-| v20.19.5 | 97.8 | 9,781 | 14,213 | 18,183 | 87,176 | 3.98 | 4.04 |
-| v22.21.1 | 95.9 | 10,920 | 17,413 | 20,731 | 119,531 | 3.98 | 4.04 |
-| v24.11.1 | 107.2 | 9,419 | 13,363 | 19,434 | 94,153 | 3.98 | 4.04 |
-| v25.2.0 | 98.6 | 9,620 | 15,633 | 18,122 | 82,420 | 3.98 | 4.04 |
-
-### Performance Comparison Summary
-
-| Node Version | Platform | Arch | Timestamp |
-|--------------|----------|------|----------|
-| v18.20.8 | linux | x64 | 11/14/2025, 1:45:57 PM |
-| v20.19.5 | linux | x64 | 11/15/2025, 2:37:32 AM |
-| v22.21.1 | linux | x64 | 11/14/2025, 1:32:10 PM |
-| v24.11.1 | linux | x64 | 11/14/2025, 1:33:38 PM |
-| v25.2.0 | linux | x64 | 11/14/2025, 5:56:49 PM |
-
-### Best Performers by Operation Type
-
-**Insert Operations:** Synchronous OFF (Unsafe) on Node.js v18.20.8 (11,663 ops/sec)
-
-**Select Operations:** MMAP 256MB on Node.js v22.21.1 (17,413 ops/sec)
-
-**Update Operations:** MMAP 256MB on Node.js v22.21.1 (20,731 ops/sec)
-
-**Delete Operations:** MMAP 256MB on Node.js v22.21.1 (119,531 ops/sec)
-
-
 
 <!-- BENCHMARK_RESULTS_END -->
 
@@ -396,6 +295,6 @@ This benchmark suite is part of Forward Email's open source contributions to the
 
 ---
 
-**Created by:** Forward Email Team  
-**License:** MIT  
+**Created by:** Forward Email Team
+**License:** MIT
 **Node.js Support:** v18+ (v20 LTS recommended)

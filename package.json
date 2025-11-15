@@ -9,8 +9,9 @@
     "benchmark:all": "node run-all-versions.js"
   },
   "dependencies": {
-    "better-sqlite3-multiple-ciphers": "^11.3.0",
     "benchmark": "^2.1.4",
+    "better-sqlite3": "latest",
+    "better-sqlite3-multiple-ciphers": "latest",
     "cli-table3": "^0.6.3",
     "fs-extra": "^11.1.1"
   },

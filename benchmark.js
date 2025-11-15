@@ -5,7 +5,8 @@
  * Based on Forward Email's actual implementation
  */
 
-const Database = require('better-sqlite3-multiple-ciphers');
+const DatabaseMultipleCiphers = require('better-sqlite3-multiple-ciphers');
+const DatabaseStandard = require('better-sqlite3');
 const Benchmark = require('benchmark');
 const Table = require('cli-table3');
 const fs = require('fs-extra');
@@ -35,7 +36,8 @@ const TEST_CONFIGS = {
   'Incremental Vacuum': { ...FORWARD_EMAIL_CONFIG, auto_vacuum: 'INCREMENTAL' },
   'WAL Autocheckpoint 1000': { ...FORWARD_EMAIL_CONFIG, wal_autocheckpoint: 1000 },
   'Cache Size 64MB': { ...FORWARD_EMAIL_CONFIG, cache_size: -64000 },
-  'MMAP 256MB': { ...FORWARD_EMAIL_CONFIG, mmap_size: 268435456 }
+  'MMAP 256MB': { ...FORWARD_EMAIL_CONFIG, mmap_size: 268435456 },
+  'better-sqlite3 (no encryption)': { ...FORWARD_EMAIL_CONFIG, cipher: null, useStandard: true }
 };
 
 class SQLiteBenchmark {
@@ -62,12 +64,14 @@ class SQLiteBenchmark {
     // Mimic Forward Email's setup-pragma.js implementation
     if (!db.open) throw new TypeError('Database is not open');
 
-    // Encryption setup
-    db.pragma(`cipher='${config.cipher || 'chacha20'}'`);
-    if (typeof db.key === 'function') {
-      db.key(Buffer.from(testPassword));
-    } else {
-      db.pragma(`key="${testPassword}"`);
+    // Encryption setup (skip for standard better-sqlite3)
+    if (config.cipher && !config.useStandard) {
+      db.pragma(`cipher='${config.cipher}'`);
+      if (typeof db.key === 'function') {
+        db.key(Buffer.from(testPassword));
+      } else {
+        db.pragma(`key="${testPassword}"`);
+      }
     }
 
     // Core PRAGMA settings
@@ -213,16 +217,19 @@ class SQLiteBenchmark {
       delete_ops_per_sec: 0,
       vacuum_time: 0,
       db_size_mb: 0,
-      wal_size_mb: 0
+      wal_size_mb: 0,
+      library: config.useStandard ? 'better-sqlite3' : 'better-sqlite3-multiple-ciphers'
     };
 
     try {
       // Setup timing
       const setupStart = process.hrtime.bigint();
 
-      const db = new Database(dbPath, { 
-        cipher: config.cipher || 'chacha20'
-      });
+      // Choose the appropriate database constructor
+      const Database = config.useStandard ? DatabaseStandard : DatabaseMultipleCiphers;
+
+      const dbOptions = config.useStandard ? {} : { cipher: config.cipher || 'chacha20' };
+      const db = new Database(dbPath, dbOptions);
 
       this.setupPragma(db, config);
       this.createTestData(db);
@@ -291,10 +298,10 @@ class SQLiteBenchmark {
 
   async benchmarkSelects(db, results) {
     const selectStmt = db.prepare(`
-      SELECT id, subject, from_addr, date 
-      FROM messages 
-      WHERE mailbox_id = ? AND date > ? 
-      ORDER BY date DESC 
+      SELECT id, subject, from_addr, date
+      FROM messages
+      WHERE mailbox_id = ? AND date > ?
+      ORDER BY date DESC
       LIMIT 50
     `);
 
@@ -312,8 +319,8 @@ class SQLiteBenchmark {
 
   async benchmarkUpdates(db, results) {
     const updateStmt = db.prepare(`
-      UPDATE messages 
-      SET flags = ? 
+      UPDATE messages
+      SET flags = ?
       WHERE id = ?
     `);
 
@@ -367,35 +374,36 @@ class SQLiteBenchmark {
     const table = new Table({
       head: [
         'Configuration',
+        'Library',
         'Setup (ms)',
         'Insert/sec',
-        'Select/sec', 
+        'Select/sec',
         'Update/sec',
         'Delete/sec',
-        'DB Size (MB)',
-        'WAL Size (MB)'
+        'DB Size (MB)'
       ],
-      colWidths: [25, 12, 12, 12, 12, 12, 12, 12]
+      colWidths: [30, 20, 12, 12, 12, 12, 12, 12]
     });
 
     Object.values(this.results).forEach(result => {
       if (result.error) {
         table.push([
           result.configName,
+          result.library || 'N/A',
           'ERROR',
           result.error.substring(0, 40) + '...',
-          '', '', '', '', ''
+          '', '', '', ''
         ]);
       } else {
         table.push([
           result.configName,
+          result.library || 'multiple-ciphers',
           result.setup_time.toFixed(1),
           result.insert_ops_per_sec.toLocaleString(),
           result.select_ops_per_sec.toLocaleString(),
           result.update_ops_per_sec.toLocaleString(),
           result.delete_ops_per_sec.toLocaleString(),
-          result.db_size_mb,
-          result.wal_size_mb || '0'
+          result.db_size_mb
         ]);
       }
     });
@@ -429,6 +437,19 @@ class SQLiteBenchmark {
       console.log(`   Select: ${forwardEmailResult.select_ops_per_sec.toLocaleString()} ops/sec`);
       console.log(`   Update: ${forwardEmailResult.update_ops_per_sec.toLocaleString()} ops/sec`);
       console.log(`   Database Size: ${forwardEmailResult.db_size_mb} MB`);
+    }
+
+    // better-sqlite3 comparison
+    const standardResult = this.results['better-sqlite3 (no encryption)'];
+    if (standardResult && !standardResult.error && forwardEmailResult && !forwardEmailResult.error) {
+      console.log(`\n🔐 Encryption Overhead Analysis:`);
+      const insertOverhead = ((forwardEmailResult.insert_ops_per_sec / standardResult.insert_ops_per_sec - 1) * 100).toFixed(1);
+      const selectOverhead = ((forwardEmailResult.select_ops_per_sec / standardResult.select_ops_per_sec - 1) * 100).toFixed(1);
+      const updateOverhead = ((forwardEmailResult.update_ops_per_sec / standardResult.update_ops_per_sec - 1) * 100).toFixed(1);
+
+      console.log(`   Insert: ${insertOverhead}% (ChaCha20 vs no encryption)`);
+      console.log(`   Select: ${selectOverhead}% (ChaCha20 vs no encryption)`);
+      console.log(`   Update: ${updateOverhead}% (ChaCha20 vs no encryption)`);
     }
   }
 
