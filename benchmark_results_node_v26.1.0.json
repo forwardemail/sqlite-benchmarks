@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-05-08T03:16:58.671Z",
+  "node_version": "v26.1.0",
+  "platform": "linux",
+  "arch": "x64",
+  "results": {
+    "Forward Email Production": {
+      "configName": "Forward Email Production",
+      "setup_time": 106.262436,
+      "insert_ops_per_sec": 9496,
+      "select_ops_per_sec": 31585,
+      "update_ops_per_sec": 18164,
+      "delete_ops_per_sec": 63536,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Memory Temp Storage": {
+      "configName": "Memory Temp Storage",
+      "setup_time": 94.239162,
+      "insert_ops_per_sec": 10142,
+      "select_ops_per_sec": 32836,
+      "update_ops_per_sec": 18351,
+      "delete_ops_per_sec": 96712,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous OFF (Unsafe)": {
+      "configName": "Synchronous OFF (Unsafe)",
+      "setup_time": 118.0636,
+      "insert_ops_per_sec": 10349,
+      "select_ops_per_sec": 32443,
+      "update_ops_per_sec": 18520,
+      "delete_ops_per_sec": 92073,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous EXTRA (Safe)": {
+      "configName": "Synchronous EXTRA (Safe)",
+      "setup_time": 95.794682,
+      "insert_ops_per_sec": 3230,
+      "select_ops_per_sec": 31392,
+      "update_ops_per_sec": 4552,
+      "delete_ops_per_sec": 77489,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "No Auto Vacuum": {
+      "configName": "No Auto Vacuum",
+      "setup_time": 95.757131,
+      "insert_ops_per_sec": 10138,
+      "select_ops_per_sec": 32605,
+      "update_ops_per_sec": 18418,
+      "delete_ops_per_sec": 90736,
+      "vacuum_time": 56.888228,
+      "db_size_mb": "4.12",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Incremental Vacuum": {
+      "configName": "Incremental Vacuum",
+      "setup_time": 96.062025,
+      "insert_ops_per_sec": 9972,
+      "select_ops_per_sec": 23251,
+      "update_ops_per_sec": 17855,
+      "delete_ops_per_sec": 90580,
+      "vacuum_time": 55.380058,
+      "db_size_mb": "4.13",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "WAL Autocheckpoint 1000": {
+      "configName": "WAL Autocheckpoint 1000",
+      "setup_time": 99.298449,
+      "insert_ops_per_sec": 10156,
+      "select_ops_per_sec": 33291,
+      "update_ops_per_sec": 17868,
+      "delete_ops_per_sec": 93633,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Cache Size 64MB": {
+      "configName": "Cache Size 64MB",
+      "setup_time": 93.730675,
+      "insert_ops_per_sec": 10061,
+      "select_ops_per_sec": 33034,
+      "update_ops_per_sec": 18313,
+      "delete_ops_per_sec": 95329,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "MMAP 256MB": {
+      "configName": "MMAP 256MB",
+      "setup_time": 93.970165,
+      "insert_ops_per_sec": 10092,
+      "select_ops_per_sec": 32966,
+      "update_ops_per_sec": 18338,
+      "delete_ops_per_sec": 94976,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "better-sqlite3 (no encryption)": {
+      "configName": "better-sqlite3 (no encryption)",
+      "setup_time": 25.051029,
+      "insert_ops_per_sec": 30844,
+      "select_ops_per_sec": 33041,
+      "update_ops_per_sec": 52324,
+      "delete_ops_per_sec": 90662,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3"
+    }
+  }
+}
