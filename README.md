@@ -114,7 +114,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 
 ### Latest Automated Benchmark Results
 
-**Last Updated:** 2026-06-24
+**Last Updated:** 2026-06-25
 
 #### Cache Size 64MB
 
@@ -126,13 +126,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 92.6 | 10,629 | 14,382 | 18,952 | 89,759 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 93.0 | 10,484 | 14,656 | 18,717 | 91,996 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 96.0 | 9,782 | 13,206 | 17,317 | 70,492 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 95.1 | 9,592 | 14,162 | 17,862 | 87,558 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 56.9 | 7,146 | 27,436 | 32,655 | 142,025 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 86.7 | 12,778 | 19,765 | 23,104 | 134,608 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 103.1 | 10,389 | 16,285 | 20,021 | 100,644 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 94.8 | 10,099 | 32,997 | 18,502 | 87,329 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 96.3 | 9,979 | 33,954 | 17,922 | 77,979 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 97.1 | 10,429 | 33,201 | 18,860 | 92,593 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 97.7 | 9,338 | 33,819 | 16,310 | 77,948 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 96.0 | 10,286 | 33,644 | 18,660 | 88,881 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 106.8 | 9,385 | 10,502 | 15,585 | 79,170 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 97.7 | 9,905 | 32,380 | 18,792 | 75,216 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 101.0 | 8,726 | 33,371 | 15,310 | 67,056 | 3.98 |
@@ -141,6 +142,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 94.6 | 10,330 | 33,118 | 18,649 | 80,496 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 100.1 | 10,076 | 18,463 | 16,979 | 83,459 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 97.3 | 10,144 | 32,437 | 18,308 | 85,237 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 95.5 | 11,406 | 34,700 | 22,290 | 129,955 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 97.8 | 9,848 | 15,344 | 18,032 | 87,176 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 97.0 | 10,043 | 32,479 | 18,239 | 92,764 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 96.1 | 9,684 | 33,121 | 18,216 | 85,970 | 3.98 |
@@ -158,6 +160,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 94.4 | 10,015 | 32,959 | 17,973 | 89,759 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 93.9 | 10,189 | 33,336 | 17,844 | 86,723 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 95.8 | 9,398 | 35,282 | 16,296 | 87,123 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 94.7 | 10,095 | 33,115 | 18,465 | 89,518 | 3.98 |
 
 #### Forward Email Production
 
@@ -169,13 +172,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 120.1 | 9,804 | 14,157 | 18,802 | 56,076 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 116.8 | 9,654 | 14,120 | 18,507 | 55,916 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 124.4 | 9,472 | 13,121 | 17,377 | 46,970 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 114.8 | 9,571 | 13,836 | 17,910 | 51,557 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 69.4 | 17,470 | 22,335 | 32,437 | 117,192 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 108.4 | 12,022 | 19,187 | 22,204 | 87,466 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 125.8 | 9,829 | 15,833 | 18,416 | 8,120 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 128.1 | 9,563 | 31,392 | 18,263 | 49,461 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 147.7 | 9,441 | 32,535 | 17,871 | 56,456 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 109.0 | 9,837 | 30,757 | 17,950 | 60,898 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 139.5 | 9,057 | 32,465 | 16,283 | 60,887 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 174.5 | 9,793 | 32,224 | 18,635 | 55,267 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 123.6 | 9,938 | 7,497 | 10,446 | 66,203 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 121.6 | 9,404 | 31,049 | 12,056 | 34,265 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 116.2 | 8,330 | 31,653 | 15,229 | 53,740 | 3.98 |
@@ -184,6 +188,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 110.4 | 9,472 | 32,074 | 17,922 | 58,959 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 114.6 | 9,499 | 31,047 | 18,538 | 58,921 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 113.3 | 9,502 | 30,158 | 18,649 | 60,790 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 108.4 | 10,339 | 29,376 | 22,158 | 81,202 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 113.1 | 9,032 | 15,189 | 17,763 | 53,723 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 113.6 | 9,572 | 31,101 | 18,170 | 61,312 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 124.4 | 9,200 | 30,847 | 18,005 | 60,938 | 3.98 |
@@ -201,6 +206,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 107.6 | 9,061 | 31,918 | 18,268 | 60,386 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 108.0 | 9,582 | 31,537 | 18,179 | 48,761 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 111.2 | 8,880 | 33,973 | 16,087 | 59,930 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 109.7 | 9,327 | 31,417 | 18,183 | 55,512 | 3.98 |
 
 #### Incremental Vacuum
 
@@ -212,13 +218,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 95.5 | 10,401 | 13,977 | 18,924 | 85,977 | 4.13 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 96.2 | 10,014 | 13,748 | 18,617 | 82,021 | 4.13 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 100.0 | 9,636 | 12,707 | 17,313 | 73,073 | 4.13 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 97.3 | 9,904 | 14,206 | 17,851 | 86,118 | 4.13 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 97.4 | 17,998 | 27,431 | 33,013 | 147,493 | 4.13 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 91.1 | 12,533 | 19,258 | 22,819 | 136,724 | 4.13 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 97.5 | 10,690 | 13,274 | 19,033 | 91,988 | 4.13 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 103.1 | 5,057 | 31,660 | 18,396 | 83,808 | 4.13 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 94.7 | 10,045 | 32,928 | 17,678 | 77,250 | 4.13 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 94.6 | 10,389 | 33,014 | 18,592 | 93,023 | 4.13 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 98.2 | 9,296 | 33,138 | 16,253 | 81,440 | 4.13 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 100.7 | 10,269 | 32,501 | 18,341 | 84,019 | 4.13 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 96.9 | 10,628 | 16,821 | 19,934 | 117,509 | 4.13 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 100.1 | 9,943 | 33,441 | 18,635 | 82,974 | 4.13 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 101.0 | 8,781 | 31,898 | 15,264 | 67,783 | 4.13 |
@@ -227,6 +234,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 97.2 | 10,073 | 25,664 | 18,650 | 78,046 | 4.13 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 100.0 | 10,146 | 30,463 | 18,276 | 90,001 | 4.13 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 104.0 | 10,030 | 24,794 | 18,507 | 79,974 | 4.13 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 97.4 | 10,917 | 23,776 | 22,223 | 123,854 | 4.13 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 100.6 | 9,695 | 13,826 | 17,858 | 86,573 | 4.13 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 96.3 | 9,982 | 30,632 | 18,263 | 91,066 | 4.13 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 98.4 | 9,766 | 32,600 | 17,687 | 85,455 | 4.13 |
@@ -244,6 +252,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 97.3 | 8,207 | 23,709 | 17,997 | 88,331 | 4.13 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 94.5 | 10,236 | 32,938 | 18,379 | 83,591 | 4.13 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 96.9 | 9,181 | 32,889 | 16,094 | 84,189 | 4.13 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 94.7 | 10,062 | 32,646 | 18,434 | 88,176 | 4.13 |
 
 #### MMAP 256MB
 
@@ -255,13 +264,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 93.0 | 10,409 | 14,467 | 18,645 | 87,866 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 92.5 | 10,330 | 14,672 | 18,086 | 90,245 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 95.8 | 8,074 | 13,123 | 17,359 | 72,280 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 96.0 | 9,976 | 14,226 | 17,534 | 87,474 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 76.1 | 17,217 | 27,502 | 32,289 | 145,328 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 85.6 | 12,666 | 20,391 | 23,226 | 123,609 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 95.9 | 10,920 | 17,413 | 20,731 | 119,531 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 97.3 | 10,140 | 33,103 | 18,477 | 86,192 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 95.6 | 10,057 | 27,417 | 17,742 | 77,616 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 96.1 | 10,294 | 33,189 | 18,748 | 90,572 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 103.4 | 9,130 | 32,190 | 16,299 | 75,873 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 95.0 | 10,354 | 33,295 | 18,727 | 89,358 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 107.2 | 9,419 | 13,363 | 19,434 | 94,153 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 98.5 | 10,218 | 34,443 | 18,783 | 88,960 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 101.6 | 8,810 | 33,779 | 15,360 | 69,920 | 3.98 |
@@ -270,6 +280,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 94.0 | 10,353 | 33,092 | 18,631 | 88,960 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 95.8 | 9,581 | 25,340 | 18,675 | 87,943 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 96.3 | 10,076 | 32,426 | 18,275 | 83,319 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 94.7 | 11,703 | 34,528 | 22,032 | 45,155 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 98.6 | 9,620 | 15,633 | 18,122 | 82,420 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 96.9 | 9,914 | 32,293 | 18,157 | 90,245 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 98.0 | 9,908 | 33,508 | 18,164 | 81,281 | 3.98 |
@@ -287,6 +298,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 94.4 | 10,092 | 33,225 | 18,405 | 91,659 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 93.7 | 9,924 | 33,026 | 18,392 | 88,176 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 96.3 | 8,999 | 35,369 | 16,258 | 88,207 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 95.7 | 9,283 | 33,114 | 18,182 | 90,744 | 3.98 |
 
 #### Memory Temp Storage
 
@@ -298,13 +310,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 93.7 | 10,547 | 14,419 | 18,847 | 86,266 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 95.1 | 10,173 | 14,240 | 18,477 | 91,149 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 96.9 | 9,727 | 12,981 | 17,392 | 75,103 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 105.9 | 9,956 | 13,518 | 17,568 | 88,952 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 67.0 | 18,044 | 27,246 | 32,806 | 144,928 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 97.1 | 10,971 | 19,857 | 22,588 | 121,581 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 102.8 | 10,447 | 15,044 | 20,192 | 79,834 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 96.0 | 9,935 | 32,410 | 18,517 | 82,699 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 96.8 | 9,940 | 33,110 | 17,567 | 72,754 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 98.5 | 10,363 | 33,133 | 18,411 | 87,100 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 99.0 | 9,325 | 33,891 | 16,320 | 79,183 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 95.0 | 10,273 | 32,711 | 18,724 | 91,233 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 118.3 | 8,792 | 12,608 | 16,794 | 81,281 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 100.0 | 10,226 | 33,217 | 18,611 | 82,223 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 102.0 | 8,806 | 32,870 | 15,262 | 67,372 | 3.98 |
@@ -313,6 +326,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 96.1 | 10,302 | 32,889 | 18,631 | 81,679 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 95.9 | 9,450 | 32,202 | 18,957 | 91,324 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 95.4 | 10,305 | 32,398 | 18,742 | 90,580 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 97.1 | 10,509 | 35,021 | 22,019 | 146,199 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 99.7 | 8,322 | 15,507 | 18,095 | 81,880 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 96.3 | 6,658 | 25,696 | 17,844 | 84,803 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 97.2 | 9,979 | 32,078 | 18,130 | 89,518 | 3.98 |
@@ -330,6 +344,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 93.6 | 10,218 | 32,935 | 18,480 | 91,575 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 95.4 | 9,965 | 32,232 | 18,161 | 76,249 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 96.4 | 9,367 | 35,108 | 16,284 | 89,389 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 95.5 | 9,982 | 32,827 | 17,628 | 85,749 | 3.98 |
 
 #### No Auto Vacuum
 
@@ -341,13 +356,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 97.2 | 10,526 | 14,377 | 19,060 | 88,331 | 4.12 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 96.7 | 10,188 | 14,196 | 18,700 | 90,490 | 4.12 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 98.2 | 9,844 | 13,165 | 17,361 | 74,267 | 4.12 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 98.1 | 9,806 | 13,518 | 17,891 | 89,518 | 4.12 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 58.9 | 18,141 | 25,634 | 32,846 | 144,071 | 4.12 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 95.3 | 11,169 | 18,908 | 22,200 | 118,078 | 4.12 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 94.7 | 11,001 | 17,000 | 19,486 | 112,613 | 4.12 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 95.6 | 10,282 | 32,330 | 17,301 | 82,905 | 4.12 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 95.8 | 9,891 | 33,561 | 17,245 | 77,077 | 4.12 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 93.3 | 10,371 | 32,814 | 18,785 | 92,421 | 4.12 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 98.2 | 9,461 | 32,637 | 16,469 | 78,684 | 4.12 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 94.2 | 10,412 | 32,574 | 18,726 | 89,518 | 4.12 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 100.2 | 9,981 | 16,660 | 19,736 | 113,340 | 4.12 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 99.0 | 9,905 | 29,382 | 18,713 | 83,591 | 4.12 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 102.4 | 8,806 | 27,379 | 15,049 | 70,517 | 4.12 |
@@ -356,6 +372,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 96.0 | 10,178 | 32,890 | 18,647 | 90,744 | 4.12 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 98.5 | 9,550 | 32,831 | 19,002 | 87,017 | 4.12 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 113.2 | 10,189 | 31,947 | 18,243 | 78,407 | 4.12 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 99.6 | 11,201 | 34,556 | 22,220 | 134,880 | 4.12 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 99.3 | 9,757 | 14,620 | 17,738 | 78,162 | 4.12 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 98.1 | 9,917 | 27,705 | 17,918 | 89,437 | 4.12 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 97.9 | 9,973 | 28,272 | 18,076 | 85,749 | 4.12 |
@@ -373,6 +390,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 94.6 | 9,934 | 32,263 | 18,352 | 87,176 | 4.12 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 94.0 | 10,092 | 32,675 | 18,288 | 82,905 | 4.12 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 98.0 | 9,110 | 35,125 | 16,098 | 87,207 | 4.12 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 95.4 | 10,131 | 32,904 | 18,458 | 87,866 | 4.12 |
 
 #### Synchronous EXTRA (Safe)
 
@@ -384,13 +402,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 96.9 | 3,495 | 12,604 | 4,653 | 76,023 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 95.9 | 3,348 | 14,150 | 4,588 | 68,837 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 99.3 | 3,297 | 13,005 | 4,329 | 63,095 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 102.6 | 2,781 | 10,500 | 3,911 | 68,601 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 70.7 | 3,482 | 22,448 | 2,256 | 125,439 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 92.7 | 4,275 | 18,716 | 5,659 | 100,513 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 96.7 | 4,638 | 17,081 | 5,734 | 101,523 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 97.7 | 3,003 | 31,269 | 4,320 | 71,043 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 103.5 | 3,246 | 27,091 | 4,322 | 67,995 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 102.4 | 2,603 | 21,969 | 3,986 | 75,506 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 103.4 | 3,970 | 22,639 | 5,536 | 66,921 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 100.8 | 3,209 | 22,415 | 4,281 | 74,873 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 144.2 | 2,973 | 9,294 | 4,405 | 96,852 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 103.1 | 1,161 | 28,242 | 3,525 | 71,808 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 104.2 | 4,259 | 31,782 | 4,923 | 33,272 | 3.98 |
@@ -399,6 +418,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 98.1 | 3,076 | 31,886 | 4,524 | 71,500 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 101.3 | 2,248 | 30,106 | 3,081 | 74,322 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 99.0 | 3,244 | 30,800 | 4,285 | 78,970 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 100.7 | 1,568 | 31,379 | 1,276 | 54,392 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 101.7 | 2,725 | 15,114 | 3,346 | 74,766 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 100.4 | 3,018 | 30,549 | 3,917 | 72,754 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 101.2 | 3,023 | 31,018 | 4,334 | 70,942 | 3.98 |
@@ -416,6 +436,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 99.4 | 2,672 | 29,312 | 3,283 | 75,786 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 96.7 | 3,159 | 31,093 | 3,622 | 66,366 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 98.3 | 4,396 | 34,487 | 5,952 | 74,184 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 98.7 | 3,275 | 31,261 | 4,208 | 75,614 | 3.98 |
 
 #### Synchronous OFF (Unsafe)
 
@@ -427,13 +448,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 90.6 | 11,088 | 14,270 | 19,179 | 87,789 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 88.3 | 10,687 | 14,454 | 18,408 | 91,743 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 100.0 | 10,299 | 13,235 | 17,599 | 72,913 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 92.0 | 10,575 | 13,552 | 17,440 | 86,490 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 48.1 | 20,114 | 26,665 | 33,417 | 139,063 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 82.1 | 10,093 | 19,517 | 23,070 | 130,839 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 87.5 | 11,260 | 17,239 | 20,120 | 105,966 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 96.0 | 11,027 | 28,781 | 18,689 | 40,362 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 95.5 | 10,294 | 33,300 | 17,917 | 73,502 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 92.9 | 10,928 | 18,732 | 19,032 | 90,253 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 97.1 | 9,839 | 29,081 | 16,654 | 75,529 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 121.6 | 11,068 | 29,512 | 19,120 | 88,168 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 126.4 | 8,617 | 9,316 | 15,436 | 78,382 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 97.9 | 10,818 | 33,729 | 19,006 | 77,736 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 104.5 | 8,005 | 33,194 | 15,429 | 68,157 | 3.98 |
@@ -442,6 +464,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 91.0 | 10,891 | 33,232 | 18,965 | 90,498 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 90.3 | 10,830 | 29,079 | 18,853 | 84,660 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 96.0 | 11,042 | 32,267 | 19,310 | 93,633 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 92.3 | 12,038 | 34,719 | 22,470 | 140,017 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 98.3 | 10,441 | 15,529 | 18,209 | 42,366 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 102.2 | 8,826 | 30,904 | 18,510 | 89,847 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 97.8 | 10,487 | 32,856 | 18,527 | 88,020 | 3.98 |
@@ -459,6 +482,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 93.6 | 10,393 | 32,065 | 18,572 | 58,065 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 96.0 | 10,727 | 32,171 | 18,657 | 80,431 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 91.7 | 9,698 | 35,161 | 16,505 | 88,913 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 89.8 | 10,612 | 32,788 | 18,772 | 87,245 | 3.98 |
 
 #### WAL Autocheckpoint 1000
 
@@ -470,13 +494,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3-multiple-ciphers | 94.5 | 10,647 | 14,456 | 18,919 | 87,943 | 3.98 |
 | v20.20.0 | better-sqlite3-multiple-ciphers | 93.6 | 10,410 | 14,267 | 18,448 | 87,627 | 3.98 |
 | v20.20.1 | better-sqlite3-multiple-ciphers | 96.1 | 6,717 | 12,845 | 17,258 | 77,077 | 3.98 |
-| v20.20.2 | better-sqlite3-multiple-ciphers | 96.2 | 9,843 | 14,075 | 17,837 | 90,001 | 3.98 |
+| v20.20.2 | better-sqlite3-multiple-ciphers | 79.6 | 17,936 | 27,078 | 32,574 | 143,451 | 3.98 |
 | v22.13.0 | better-sqlite3-multiple-ciphers | 88.4 | 11,981 | 19,530 | 23,199 | 124,270 | 3.98 |
 | v22.21.1 | better-sqlite3-multiple-ciphers | 96.6 | 11,008 | 15,630 | 19,202 | 99,039 | 3.98 |
 | v22.22.0 | better-sqlite3-multiple-ciphers | 94.7 | 10,088 | 32,865 | 18,235 | 86,790 | 3.98 |
 | v22.22.1 | better-sqlite3-multiple-ciphers | 95.6 | 9,936 | 33,495 | 17,804 | 76,313 | 3.98 |
 | v22.22.2 | better-sqlite3-multiple-ciphers | 95.5 | 10,338 | 33,464 | 18,713 | 90,408 | 3.98 |
 | v22.22.3 | better-sqlite3-multiple-ciphers | 99.9 | 9,331 | 33,887 | 16,395 | 78,561 | 3.98 |
+| v22.23.0 | better-sqlite3-multiple-ciphers | 94.8 | 10,350 | 33,787 | 18,725 | 83,243 | 3.98 |
 | v24.11.1 | better-sqlite3-multiple-ciphers | 118.2 | 10,511 | 14,410 | 19,432 | 107,550 | 3.98 |
 | v24.12.0 | better-sqlite3-multiple-ciphers | 98.2 | 9,943 | 33,606 | 18,729 | 85,455 | 3.98 |
 | v24.13.0 | better-sqlite3-multiple-ciphers | 101.2 | 8,738 | 33,746 | 15,262 | 70,512 | 3.98 |
@@ -485,6 +510,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3-multiple-ciphers | 96.5 | 10,321 | 33,070 | 18,522 | 90,580 | 3.98 |
 | v24.15.0 | better-sqlite3-multiple-ciphers | 95.6 | 10,304 | 28,223 | 18,546 | 87,627 | 3.98 |
 | v24.16.0 | better-sqlite3-multiple-ciphers | 98.2 | 10,102 | 32,513 | 18,339 | 81,149 | 3.98 |
+| v24.17.0 | better-sqlite3-multiple-ciphers | 97.6 | 10,937 | 35,044 | 22,278 | 134,174 | 3.98 |
 | v25.2.0 | better-sqlite3-multiple-ciphers | 99.7 | 9,608 | 14,918 | 18,115 | 83,598 | 3.98 |
 | v25.2.1 | better-sqlite3-multiple-ciphers | 96.4 | 9,943 | 32,686 | 18,128 | 91,912 | 3.98 |
 | v25.3.0 | better-sqlite3-multiple-ciphers | 97.2 | 9,973 | 33,224 | 18,194 | 83,949 | 3.98 |
@@ -502,6 +528,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3-multiple-ciphers | 98.1 | 10,129 | 33,184 | 18,328 | 89,928 | 3.98 |
 | v26.3.0 | better-sqlite3-multiple-ciphers | 94.7 | 10,189 | 30,746 | 18,020 | 83,668 | 3.98 |
 | v26.3.1 | better-sqlite3-multiple-ciphers | 97.2 | 8,765 | 35,290 | 15,964 | 85,193 | 3.98 |
+| v26.4.0 | better-sqlite3-multiple-ciphers | 94.3 | 9,517 | 32,762 | 18,406 | 82,563 | 3.98 |
 
 #### better-sqlite3 (no encryption)
 
@@ -513,13 +540,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | better-sqlite3 | 25.1 | 30,968 | 14,372 | 53,149 | 96,246 | 3.98 |
 | v20.20.0 | better-sqlite3 | 24.7 | 31,182 | 14,719 | 52,586 | 94,877 | 3.98 |
 | v20.20.1 | better-sqlite3 | 27.1 | 26,167 | 14,488 | 42,618 | 78,284 | 3.98 |
-| v20.20.2 | better-sqlite3 | 26.0 | 29,953 | 14,066 | 50,203 | 86,348 | 3.98 |
+| v20.20.2 | better-sqlite3 | 37.3 | 43,291 | 28,148 | 76,667 | 149,254 | 3.98 |
 | v22.13.0 | better-sqlite3 | 27.0 | 44,889 | 36,970 | 87,725 | 134,735 | 3.98 |
 | v22.21.1 | - | - | - | - | - | - | - |
 | v22.22.0 | better-sqlite3 | 25.3 | 30,052 | 32,922 | 51,655 | 91,399 | 3.98 |
 | v22.22.1 | better-sqlite3 | 26.3 | 26,642 | 33,102 | 44,666 | 76,254 | 3.98 |
 | v22.22.2 | better-sqlite3 | 26.3 | 30,606 | 33,437 | 52,358 | 79,592 | 3.98 |
 | v22.22.3 | better-sqlite3 | 26.8 | 27,895 | 33,697 | 45,355 | 84,552 | 3.98 |
+| v22.23.0 | better-sqlite3 | 27.0 | 30,669 | 33,906 | 49,299 | 90,334 | 3.98 |
 | v24.11.1 | - | - | - | - | - | - | - |
 | v24.12.0 | better-sqlite3 | 28.4 | 28,691 | 33,270 | 51,436 | 81,753 | 3.98 |
 | v24.13.0 | better-sqlite3 | 29.0 | 23,477 | 33,379 | 37,256 | 72,934 | 3.98 |
@@ -528,6 +556,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | better-sqlite3 | 26.4 | 30,341 | 33,065 | 52,433 | 91,149 | 3.98 |
 | v24.15.0 | better-sqlite3 | 31.3 | 28,738 | 32,039 | 52,584 | 83,112 | 3.98 |
 | v24.16.0 | better-sqlite3 | 27.4 | 28,900 | 32,505 | 50,051 | 59,591 | 3.98 |
+| v24.17.0 | better-sqlite3 | 22.5 | 40,457 | 34,495 | 81,807 | 131,010 | 3.98 |
 | v25.2.0 | - | - | - | - | - | - | - |
 | v25.2.1 | better-sqlite3 | 26.9 | 29,015 | 33,338 | 51,162 | 93,110 | 3.98 |
 | v25.3.0 | better-sqlite3 | 28.4 | 29,734 | 32,338 | 51,872 | 88,331 | 3.98 |
@@ -545,6 +574,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | better-sqlite3 | 25.1 | 29,117 | 35,146 | 53,005 | 86,415 | 3.98 |
 | v26.3.0 | better-sqlite3 | 26.6 | 30,795 | 29,202 | 50,430 | 87,025 | 3.98 |
 | v26.3.1 | better-sqlite3 | 25.2 | 29,249 | 29,671 | 46,078 | 86,603 | 3.98 |
+| v26.4.0 | better-sqlite3 | 25.8 | 29,872 | 29,407 | 51,878 | 88,098 | 3.98 |
 
 ### Performance Comparison Summary
 
@@ -556,13 +586,14 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v20.19.6 | linux | x64 | 1/22/2026, 2:52:43 AM |
 | v20.20.0 | linux | x64 | 2/25/2026, 3:09:47 AM |
 | v20.20.1 | linux | x64 | 3/15/2026, 3:13:31 AM |
-| v20.20.2 | linux | x64 | 6/24/2026, 3:21:01 AM |
+| v20.20.2 | linux | x64 | 6/25/2026, 3:19:51 AM |
 | v22.13.0 | linux | x64 | 11/15/2025, 3:02:58 AM |
 | v22.21.1 | linux | x64 | 11/14/2025, 1:32:10 PM |
 | v22.22.0 | linux | x64 | 1/23/2026, 2:49:01 AM |
 | v22.22.1 | linux | x64 | 3/13/2026, 3:06:23 AM |
 | v22.22.2 | linux | x64 | 4/23/2026, 3:15:26 AM |
 | v22.22.3 | linux | x64 | 6/10/2026, 3:19:59 AM |
+| v22.23.0 | linux | x64 | 6/25/2026, 3:19:03 AM |
 | v24.11.1 | linux | x64 | 11/14/2025, 1:33:38 PM |
 | v24.12.0 | linux | x64 | 12/18/2025, 2:42:14 AM |
 | v24.13.0 | linux | x64 | 2/19/2026, 3:09:49 AM |
@@ -571,6 +602,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v24.14.1 | linux | x64 | 4/3/2026, 3:13:44 AM |
 | v24.15.0 | linux | x64 | 5/26/2026, 3:20:15 AM |
 | v24.16.0 | linux | x64 | 5/27/2026, 3:21:16 AM |
+| v24.17.0 | linux | x64 | 6/25/2026, 3:18:48 AM |
 | v25.2.0 | linux | x64 | 11/14/2025, 5:56:49 PM |
 | v25.2.1 | linux | x64 | 11/18/2025, 2:41:30 AM |
 | v25.3.0 | linux | x64 | 1/14/2026, 2:53:55 AM |
@@ -588,6 +620,7 @@ While encryption adds overhead, it provides quantum-resistant security for sensi
 | v26.2.0 | linux | x64 | 5/21/2026, 3:22:26 AM |
 | v26.3.0 | linux | x64 | 6/2/2026, 3:23:22 AM |
 | v26.3.1 | linux | x64 | 6/19/2026, 3:22:43 AM |
+| v26.4.0 | linux | x64 | 6/25/2026, 3:18:52 AM |
 
 ### Best Performers by Operation Type
 
