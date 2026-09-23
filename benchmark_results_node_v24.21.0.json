@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-09-23T07:38:58.127Z",
+  "node_version": "v24.21.0",
+  "platform": "linux",
+  "arch": "x64",
+  "results": {
+    "Forward Email Production": {
+      "configName": "Forward Email Production",
+      "setup_time": 117.609249,
+      "insert_ops_per_sec": 9537,
+      "select_ops_per_sec": 33019,
+      "update_ops_per_sec": 17461,
+      "delete_ops_per_sec": 53005,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Memory Temp Storage": {
+      "configName": "Memory Temp Storage",
+      "setup_time": 96.368423,
+      "insert_ops_per_sec": 9998,
+      "select_ops_per_sec": 34274,
+      "update_ops_per_sec": 17819,
+      "delete_ops_per_sec": 73335,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous OFF (Unsafe)": {
+      "configName": "Synchronous OFF (Unsafe)",
+      "setup_time": 92.154064,
+      "insert_ops_per_sec": 9087,
+      "select_ops_per_sec": 34621,
+      "update_ops_per_sec": 18144,
+      "delete_ops_per_sec": 75672,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous EXTRA (Safe)": {
+      "configName": "Synchronous EXTRA (Safe)",
+      "setup_time": 97.400717,
+      "insert_ops_per_sec": 3935,
+      "select_ops_per_sec": 33543,
+      "update_ops_per_sec": 4861,
+      "delete_ops_per_sec": 51237,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "No Auto Vacuum": {
+      "configName": "No Auto Vacuum",
+      "setup_time": 95.937195,
+      "insert_ops_per_sec": 10121,
+      "select_ops_per_sec": 34802,
+      "update_ops_per_sec": 17821,
+      "delete_ops_per_sec": 78284,
+      "vacuum_time": 53.860263,
+      "db_size_mb": "4.12",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Incremental Vacuum": {
+      "configName": "Incremental Vacuum",
+      "setup_time": 94.224345,
+      "insert_ops_per_sec": 9989,
+      "select_ops_per_sec": 30957,
+      "update_ops_per_sec": 17052,
+      "delete_ops_per_sec": 69507,
+      "vacuum_time": 54.876986,
+      "db_size_mb": "4.13",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "WAL Autocheckpoint 1000": {
+      "configName": "WAL Autocheckpoint 1000",
+      "setup_time": 96.321915,
+      "insert_ops_per_sec": 9624,
+      "select_ops_per_sec": 34113,
+      "update_ops_per_sec": 17580,
+      "delete_ops_per_sec": 73774,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Cache Size 64MB": {
+      "configName": "Cache Size 64MB",
+      "setup_time": 92.182298,
+      "insert_ops_per_sec": 10082,
+      "select_ops_per_sec": 25196,
+      "update_ops_per_sec": 18059,
+      "delete_ops_per_sec": 72543,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "MMAP 256MB": {
+      "configName": "MMAP 256MB",
+      "setup_time": 94.750961,
+      "insert_ops_per_sec": 9979,
+      "select_ops_per_sec": 34741,
+      "update_ops_per_sec": 17974,
+      "delete_ops_per_sec": 76260,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "better-sqlite3 (no encryption)": {
+      "configName": "better-sqlite3 (no encryption)",
+      "setup_time": 26.568155,
+      "insert_ops_per_sec": 28343,
+      "select_ops_per_sec": 35770,
+      "update_ops_per_sec": 48751,
+      "delete_ops_per_sec": 77616,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3"
+    }
+  }
+}
