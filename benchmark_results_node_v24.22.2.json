@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-11-05T09:18:34.235Z",
+  "node_version": "v24.22.2",
+  "platform": "linux",
+  "arch": "x64",
+  "results": {
+    "Forward Email Production": {
+      "configName": "Forward Email Production",
+      "setup_time": 108.648921,
+      "insert_ops_per_sec": 15961,
+      "select_ops_per_sec": 60548,
+      "update_ops_per_sec": 29071,
+      "delete_ops_per_sec": 100150,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Memory Temp Storage": {
+      "configName": "Memory Temp Storage",
+      "setup_time": 111.109821,
+      "insert_ops_per_sec": 16419,
+      "select_ops_per_sec": 63319,
+      "update_ops_per_sec": 29172,
+      "delete_ops_per_sec": 117606,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous OFF (Unsafe)": {
+      "configName": "Synchronous OFF (Unsafe)",
+      "setup_time": 53.615618,
+      "insert_ops_per_sec": 17973,
+      "select_ops_per_sec": 66114,
+      "update_ops_per_sec": 30231,
+      "delete_ops_per_sec": 117883,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Synchronous EXTRA (Safe)": {
+      "configName": "Synchronous EXTRA (Safe)",
+      "setup_time": 95.042162,
+      "insert_ops_per_sec": 3909,
+      "select_ops_per_sec": 61700,
+      "update_ops_per_sec": 6400,
+      "delete_ops_per_sec": 87589,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "No Auto Vacuum": {
+      "configName": "No Auto Vacuum",
+      "setup_time": 82.037275,
+      "insert_ops_per_sec": 16694,
+      "select_ops_per_sec": 66048,
+      "update_ops_per_sec": 29425,
+      "delete_ops_per_sec": 108178,
+      "vacuum_time": 87.924507,
+      "db_size_mb": "4.12",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Incremental Vacuum": {
+      "configName": "Incremental Vacuum",
+      "setup_time": 88.682285,
+      "insert_ops_per_sec": 16135,
+      "select_ops_per_sec": 61612,
+      "update_ops_per_sec": 26038,
+      "delete_ops_per_sec": 78740,
+      "vacuum_time": 77.946482,
+      "db_size_mb": "4.13",
+      "wal_size_mb": "7.41",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "WAL Autocheckpoint 1000": {
+      "configName": "WAL Autocheckpoint 1000",
+      "setup_time": 97.473378,
+      "insert_ops_per_sec": 15630,
+      "select_ops_per_sec": 51696,
+      "update_ops_per_sec": 28657,
+      "delete_ops_per_sec": 120438,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "Cache Size 64MB": {
+      "configName": "Cache Size 64MB",
+      "setup_time": 95.653128,
+      "insert_ops_per_sec": 16270,
+      "select_ops_per_sec": 53483,
+      "update_ops_per_sec": 27918,
+      "delete_ops_per_sec": 107712,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "MMAP 256MB": {
+      "configName": "MMAP 256MB",
+      "setup_time": 90.210458,
+      "insert_ops_per_sec": 16669,
+      "select_ops_per_sec": 56799,
+      "update_ops_per_sec": 29189,
+      "delete_ops_per_sec": 120438,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3-multiple-ciphers"
+    },
+    "better-sqlite3 (no encryption)": {
+      "configName": "better-sqlite3 (no encryption)",
+      "setup_time": 61.259319,
+      "insert_ops_per_sec": 36210,
+      "select_ops_per_sec": 63038,
+      "update_ops_per_sec": 65003,
+      "delete_ops_per_sec": 127681,
+      "vacuum_time": 0,
+      "db_size_mb": "3.98",
+      "wal_size_mb": "4.04",
+      "library": "better-sqlite3"
+    }
+  }
+}
